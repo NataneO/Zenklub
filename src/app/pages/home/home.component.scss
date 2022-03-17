@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+    
+    app-profile{
+        width: calc(60% - 20px);
+    }
+
+    app-schedule{
+        width: 40%;
+    }
+}

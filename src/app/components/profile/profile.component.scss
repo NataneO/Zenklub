@@ -1,0 +1,31 @@
+.container {
+    padding: 1rem;
+
+    .content_professionalData {
+        display: flex;
+        justify-content: space-between;
+
+        .professionalData--photo img {
+            width: 8rem;
+            height: 8rem;
+        }
+
+        .professionalData--info{
+            width: calc(100% - 9rem);
+
+            .info--price{
+                display: flex;
+
+                h6{
+                    line-height: 1.4rem;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+    
+    .content_professionalDescription{
+        margin-top: 1rem;
+        text-align: justify;
+    }
+}
