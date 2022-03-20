@@ -1,6 +1,9 @@
 .container {
     padding: 1rem;
 
+    .container_content{
+        margin-bottom:4rem;
+    }
     .content_professionalData {
         display: flex;
         justify-content: space-between;
