@@ -34,6 +34,10 @@
                     font-weight: 400;
                 }
 
+                .reviews{
+                    display: flex;
+                }
+
                 .basic--info .subject--item{
                     margin: .5rem 0;
                 & >*{ 

@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+
 import { withLatestFrom } from 'rxjs';
 import { Professional } from 'src/models/professional';
 import { ProfessionalsService } from 'src/services/professionals/professionals.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +13,7 @@ import { ProfessionalsService } from 'src/services/professionals/professionals.s
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  public form: FormGroup
   @Input()  responseDates: any;
   professional = {} as Professional;
   times: any[]=[]
@@ -18,7 +21,13 @@ export class ProfileComponent implements OnInit {
   professionalsObject: any ;
   responseProfessionals : any ;
   responseTime : any ;
-  constructor(private http: HttpClientModule, private professionalsService: ProfessionalsService, public dp:DatePipe) { }
+  rating: number;
+
+ ;
+  constructor(private http: HttpClientModule, private professionalsService: ProfessionalsService, public dp:DatePipe, private fb:FormBuilder) {
+    this.rating = 0;
+    
+   }
 
   ngOnInit(): void {
     this.getProfessionals();
@@ -29,9 +38,15 @@ export class ProfileComponent implements OnInit {
     this.professionalsService.getProfessionals().subscribe((professionals: Professional[]) => {
       this.professionalsObject = professionals;
       this.professionalsObject.map((professionalItem)=>{
-        console.log(professionalItem)
-        let startTime = this.formatTime(professionalItem.start_time)
-        let endTime = this.formatTime(professionalItem.end_time)
+  
+        let starsCount= 0;
+        professionalItem.reviews.map((professionalReview)=>{
+           starsCount = starsCount + professionalReview.stars
+        })
+        let average = starsCount / professionalItem.reviews.length
+        this.form = this.fb.group({
+          rating: [Math.round(average), Validators.required],
+        })
         let id = professionalItem.id
         let timesArray = this.timesArray(id, this.formatTime(professionalItem.start_time), this.formatTime(professionalItem.end_time))
       });

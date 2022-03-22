@@ -5,11 +5,15 @@ export interface Professional {
     name: string,
     segment: String,
     country: String,
-    reviews: number,
+    reviews: [
+        {
+            stars: number
+
+        }],
     price: number,
     duration: String,
-    description:String,
-    start_time:String,
+    description: String,
+    start_time: String,
     end_time: String,
     range: number,
     schedule: [

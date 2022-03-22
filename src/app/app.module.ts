@@ -8,11 +8,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DayCalendarComponent } from './components/day-calendar/day-calendar.component';
 import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { TimeSchedulesComponent } from './components/profile/time-schedules/time-schedules.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localePt, 'pt');
 
@@ -27,7 +29,10 @@ registerLocaleData(localePt, 'pt');
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
+    NgxStarRatingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     IvyCarouselModule
