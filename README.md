@@ -14,12 +14,12 @@ Abaixo, estão listadas as instruções para execução.
 ### Esse projeto está dividido em duas branchs:
 #### Na branch 'main' você encontra o código principal, com modificações de estilo,funcionalidades, etc.
 #### Na branch 'basic' você encontra o código com o layout como foi solicitado.
-##### Em ambas as branchs estão listadas as particularidades de cada um e os links para acesso das duas versões. -->
+##### Em ambas as branchs estão listadas as particularidades de cada um e os links para acesso das duas versões. 
 _________________________________________________________________________________________________________________________ 
  
 ### Esse projeto pode ser acessado de duas formas:
 1) Você pode acessá-lo clicando no seguinte link:
-<!-- ##### <a target="_blank" href="https://fastidious-syrniki-816b77.netlify.app">Versão principal</a>
+ ##### <a target="_blank" href="https://fastidious-syrniki-816b77.netlify.app">Versão principal</a>
  ###### Versão mais completa, inspirado no site atual da marca, porém com modificações pessoais.
  ##### <a target="_blank" href="https://cerulean-bublanina-7c045d.netlify.app/">Versão basica </a> #####
  ######  Versão com layout de acordo com o solicitado
