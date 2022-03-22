@@ -11,19 +11,18 @@ Abaixo, estão listadas as instruções para execução.
 ###### Projeto em Angular 13.3.0 para vaga front-end na empresa Zenklub.
 
 # Seja bem-vindo(a) #
-<!-- ### Esse projeto está dividido em duas branchs:
-#### Na branch 'main' você encontra o código principal, como foi solicitado no teste.
-#### Na branch 'extras' você encontra o código com modificações de estilo,funcionalidades, etc.
+### Esse projeto está dividido em duas branchs:
+#### Na branch 'main' você encontra o código principal, com modificações de estilo,funcionalidades, etc.
+#### Na branch 'basic' você encontra o código com o layout como foi solicitado.
 ##### Em ambas as branchs estão listadas as particularidades de cada um e os links para acesso das duas versões. -->
 _________________________________________________________________________________________________________________________ 
  
 ### Esse projeto pode ser acessado de duas formas:
 1) Você pode acessá-lo clicando no seguinte link:
-<!-- ##### <a target="_blank" href="">Versão principal</a>
- ###### Versão com layout de acordo com o solicitado
- ##### <a target="_blank" href="https://fastidious-syrniki-816b77.netlify.app">Versão pessoal </a> #####
- ###### Versão mais completa, inspirado no site atual da marca, porém com modificações pessoais. -->
- <a target="_blank" href="https://fastidious-syrniki-816b77.netlify.app">Clicando aqui! </a>
+<!-- ##### <a target="_blank" href="https://fastidious-syrniki-816b77.netlify.app">Versão principal</a>
+ ###### Versão mais completa, inspirado no site atual da marca, porém com modificações pessoais.
+ ##### <a target="_blank" href="https://cerulean-bublanina-7c045d.netlify.app/">Versão basica </a> #####
+ ######  Versão com layout de acordo com o solicitado
 
 2) Você pode cloná-lo e rodar na sua máquina executando os passos listados abaixo. 
 
@@ -47,7 +46,7 @@ npm install
 
 ## Pronto! ##
 #### As dependências do projeto estam instaladas na sua máquina. 
-<!-- #### Caso queira alterar a branch do projeto, para acessar a Versão Principal, ou a versão pessoal, utilize os seguintes comandos:
+Caso queira alterar a branch do projeto, para acessar a versão principal ou a versão básica, utilize os seguintes comandos:
 
 ```sh
 git checkout -b "main"
@@ -56,9 +55,9 @@ git checkout -b "main"
 
 
 ```sh
-git checkout -b "extras"
+git checkout -b "basic"
 ``` 
-* Para acessar o projeto na versão pessoal -->
+* Para acessar o projeto na versão básica -->
 
 #### Agora, sempre que quiser rodar o projeto, acesse a branch correspondente e utilize o comando 
 
