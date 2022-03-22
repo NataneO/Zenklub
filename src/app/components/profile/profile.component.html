@@ -1,21 +1,38 @@
-<div class="container " >
-    <div class="container_content" *ngFor = "let professional of professionals">
-        <section class="content_professionalData">
-            <figure class="professionalData--photo">
-                <img src="assets/woman.png">
-            </figure>
-            <article class="professionalData--info">
-                <h3>{{professional.name}}</h3>
-                <h6>{{professional.segment}} | {{professional.country}}</h6>
-                <h5>{{professional.reviews}}</h5>
-                <div class="info--price">
-                    <h4>R$ {{professional.price}}</h4>
-                    <h6>/ {{professional.duration}}</h6>
-                </div>
-            </article>
-        </section>
-        <section class="content_professionalDescription">
-            <span>{{professional.description}}</span>
-        </section>
+<div class="container ">
+    <div class="container_content" *ngFor="let professional of professionalsObject">
+        <div id={{professional.id}} class="content_professionalItem">
+            <div class="content_professionalProfile">
+                <section class="content_professionalData">
+                    <figure class="professionalData--photo">
+                        <img src="assets/woman.png">
+                    </figure>
+                    <article class="professionalData--info">
+                        <h2>{{professional.name}}</h2>
+                        <div class="basic--info">
+                            <h5><span class="info--segment">{{professional.segment}} </span>| {{professional.country}}</h5>
+                            <h5>{{professional.reviews}}</h5>
+                            <h5>Idioma(s): {{professional.language}}</h5>
+                            <div class="subject--item">
+                                <h5  *ngFor="let subject of professional.subject">{{subject.name}}</h5>
+                            </div>
+                        </div>
+                        <div class="info--price">
+                            <h4>R$ {{professional.price}}</h4>
+                            <h6>/ {{professional.duration}}</h6>
+                        </div>
+                    </article>
+                </section>
+                <section class="content_professionalDescription">
+                    <span>{{professional.description}}</span>
+                </section>
+            </div>
+            <app-time-schedules [responseTime]="times" [professionalId]='professional.id'
+                [sessionTime]="professional.schedule"></app-time-schedules>
+        </div>
+        <button>
+            <p>Gostei! &#x1F49C; Quero saber mais.</p>
+        </button>
     </div>
+
+
 </div>

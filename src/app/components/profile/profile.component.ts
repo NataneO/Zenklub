@@ -1,5 +1,7 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { withLatestFrom } from 'rxjs';
 import { Professional } from 'src/models/professional';
 import { ProfessionalsService } from 'src/services/professionals/professionals.service';
 
@@ -9,41 +11,59 @@ import { ProfessionalsService } from 'src/services/professionals/professionals.s
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  readonly apiURL : string | undefined;
-  bla : any[] = [];
-  ble: 2 = 2;
-
   professional = {} as Professional;
+  times: any[]=[]
   professionals: Professional[];
-constructor(private http : HttpClientModule,private professionalsService: ProfessionalsService){} 
+  professionalsObject: any ;
+  responseProfessionals : any ;
+  responseTime : any ;
+  constructor(private http: HttpClientModule, private professionalsService: ProfessionalsService, public dp:DatePipe) { }
 
   ngOnInit(): void {
     this.getProfessionals();
   }
 
 
+  getProfessionals() {
+    this.professionalsService.getProfessionals().subscribe((professionals: Professional[]) => {
+      this.professionalsObject = professionals;
+      this.professionalsObject.map((professionalItem)=>{
+        console.log(professionalItem)
+        let startTime = this.formatTime(professionalItem.start_time)
+        let endTime = this.formatTime(professionalItem.end_time)
+        let id = professionalItem.id
+        let timesArray = this.timesArray(id, this.formatTime(professionalItem.start_time), this.formatTime(professionalItem.end_time))
+      });
+      
+      this.professionals = professionals;
+    
+    });
+  }
+  getProfessional(id){
+console.log(id)
+  }
+  formatTime(time: string){
+  let time_partial: any[]= time.split(':');
+   return new Date(1970,0,1, time_partial[0], time_partial[1], time_partial[2]);
+  }
 
+  timesArray(idProfessional:number, startTime: Date, endTime:Date){
+    let timesByProfessional: any[]= []
+    let startHours = startTime.getHours()
+    let endHours = endTime.getHours()
+    while(startHours <= endHours){
+      startHours = startTime.getHours()
+      let initTime =  this.dp.transform(startTime, 'HH:mm')
+      let finalTime =  this.dp.transform(endTime, 'HH:mm')
+  
+      timesByProfessional.push({initTime})
+      
+   
+      startTime.setMinutes(startTime.getMinutes()+30)
+      }
+      this.times.push({idProfessional, timesByProfessional})
+      
+    }
+  }
 
-getProfessionals() {
-  this.professionalsService.getProfessionals().subscribe((professionals: Professional[]) => {
-    this.professionals = professionals;
-  });
-}
-
-deleteCar(professional: Professional) {
-  this.professionalsService.deleteProfessional(professional).subscribe(() => {
-    this.getProfessionals();
-  });
-}
-
-
-editProfessional(professional: Professional) {
-  this.professional = { ...professional };
-}
-
-}
-
-
-
-
-
+  

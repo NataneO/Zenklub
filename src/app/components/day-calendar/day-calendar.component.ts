@@ -1,23 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss'],
+  selector: 'app-day-calendar',
+  templateUrl: './day-calendar.component.html',
+  styleUrls: ['./day-calendar.component.scss'],
 
 })
 
 
 
-export class ScheduleComponent implements OnInit {
-
-
+export class DayCalendarComponent implements OnInit {
+ 
   dates: any[] = [];
 
-
-  professionalProfile: any[] = [];
   initialDate = new Date();
   nextDate = new Date();
   i = new Date()
@@ -29,8 +26,9 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     while (this.initialDate < this.nextDate) {
-      let currentDate = this.dp.transform(this.initialDate, 'EE MMM dd')
-      this.dates.push(currentDate)
+      let weekDay =  this.dp.transform(this.initialDate, 'EE')
+      let currentDate = this.dp.transform(this.initialDate, 'MMM dd')
+      this.dates.push({weekDay, currentDate})
       this.initialDate.setDate(this.initialDate.getDate() + 1);
     }
 

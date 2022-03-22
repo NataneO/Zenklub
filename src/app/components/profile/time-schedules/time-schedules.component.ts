@@ -1,15 +1,17 @@
-
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-time-schedules',
+  templateUrl: './time-schedules.component.html',
+  styleUrls: ['./time-schedules.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class TimeSchedulesComponent implements OnInit {
 
- 
+  @Input() responseTime: any;
+  @Input() professionalId: any;
+  @Input() sessionTime: any;
+
   dates: any[] = [];
 
   initialDate = new Date();
@@ -28,7 +30,8 @@ export class HomeComponent implements OnInit {
       this.dates.push({weekDay, currentDate})
       this.initialDate.setDate(this.initialDate.getDate() + 1);
     }
-
   }
 
 }
+
+

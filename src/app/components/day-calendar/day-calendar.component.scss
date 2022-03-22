@@ -1,0 +1,28 @@
+.container {
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  text-align: center;
+
+  .carousel-cell{
+    padding: .4rem 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .date--weekDay{
+    font-size: 10px;
+  }
+
+  .date--currentDay{
+    font-size: 14px;
+  }
+}
+
+@media screen and(max-width:900px) {
+  .container{
+      justify-content: center;
+  }
+}

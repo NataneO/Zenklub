@@ -9,7 +9,7 @@ import { Professional } from '../../models/professional';
 })
 export class ProfessionalsService {
 
-  url = 'https://8e6bf8cf-c7fe-439f-970f-5793d3ddd1e3.mock.pstmn.io/professional';
+  url = 'https://032d33d7-0241-4896-a1f5-5bee1d0e441b.mock.pstmn.io/professional';
 
 
   constructor(private httpClient: HttpClient) { }
@@ -25,13 +25,7 @@ export class ProfessionalsService {
         catchError(this.handleError))
   }
 
-  getProfessionalById(id: number): Observable<Professional> {
-    return this.httpClient.get<Professional>(this.url + '/' + id)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
+
 
 
   saveProfessional(professional: Professional): Observable<Professional> {
@@ -59,7 +53,6 @@ export class ProfessionalsService {
       )
   }
 
-  // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
