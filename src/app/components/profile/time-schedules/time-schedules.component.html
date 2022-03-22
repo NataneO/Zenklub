@@ -1,13 +1,14 @@
 <div class="container">
     <carousel [cellsToShow]="4" [width]="400" [arrows]="false" [lightDOM]="true"  [overflowCellsLimit]="3" > 
-        <div class="carousel-cell" *ngFor="let date of dates" >
+        <div class="carousel-cell" *ngFor="let date of responseDates">
+            
             <div class="" *ngFor = "let time of responseTime">
                 <div class="" *ngIf = "time.idProfessional === professionalId ">
                 <div  *ngFor = "let item of time.timesByProfessional">
                   <div *ngFor="let test of sessionTime"> 
-                      <div class="time_slot"  [class.unavailable] = "test.hour === item.initTime">
-                    <span [class.invisible] = "test.hour === item.initTime">{{item.initTime}}</span>
-                    <div class="divider" [class.visible] = "test.hour === item.initTime"></div>
+                      <div class="time_slot"  [class.unavailable] = "test.hour === item.initTime &&  date.currentDate == test.date">
+                    <span [class.invisible] ="test.hour === item.initTime && date.currentDate == test.date">{{item.initTime}}</span>
+                    <div class="divider" [class.visible] = "test.hour === item.initTime && date.currentDate == test.date"></div>
                       </div>
                   </div>
                 </div>

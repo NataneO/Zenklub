@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./time-schedules.component.scss']
 })
 export class TimeSchedulesComponent implements OnInit {
-
+  @Input() responseDates: any;
   @Input() responseTime: any;
   @Input() professionalId: any;
   @Input() sessionTime: any;

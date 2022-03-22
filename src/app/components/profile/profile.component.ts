@@ -11,6 +11,7 @@ import { ProfessionalsService } from 'src/services/professionals/professionals.s
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  @Input()  responseDates: any;
   professional = {} as Professional;
   times: any[]=[]
   professionals: Professional[];

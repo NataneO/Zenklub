@@ -2,7 +2,7 @@
 
     <carousel [height]="40"
     [cellsToShow]="4" [width]="400" [arrowsOutside]="true" [lightDOM]="true" [overflowCellsLimit]="3" arrowsTheme="dark">
-        <div *ngFor="let date of dates" class="carousel-cell"  >
+        <div *ngFor="let date of responseDates" class="carousel-cell"  >
             <div class="date--weekDay">{{date.weekDay}}</div>
             <div class="date--currentDay">{{date.currentDate}}</div>
         </div>
