@@ -17,6 +17,7 @@ export class TimeSchedulesComponent implements OnInit {
   initialDate = new Date();
   nextDate = new Date();
   i = new Date()
+  timezone : string;
 
   constructor(public dp: DatePipe) {
 
@@ -26,6 +27,7 @@ export class TimeSchedulesComponent implements OnInit {
   ngOnInit(): void {
     while (this.initialDate < this.nextDate) {
       let weekDay =  this.dp.transform(this.initialDate, 'EE')
+      this.timezone =  this.dp.transform(this.initialDate, 'zzzz')
       let currentDate = this.dp.transform(this.initialDate, 'MMM dd')
       this.dates.push({weekDay, currentDate})
       this.initialDate.setDate(this.initialDate.getDate() + 1);

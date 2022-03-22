@@ -1,22 +1,55 @@
 .container {
-    height: 100%;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem 5rem;
+    
+    margin: 0 auto;
     text-align: center;
-   
-   .carousel{
+      .carousel{
        height: 100%;
 
    }
   
+    .carousel-cell{
+      padding: .4rem 0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .date--weekDay{
+      font-size: 10px;
+    }
+  
+    .date--currentDay{
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and(max-width:900px) {
+    .container{
+        justify-content: center;
+    }
+  }
+
+.schedules--fragment{
+    padding: 0.5rem 3rem;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 10px 0 rgb(0 0 0 / 10%);
+    margin-bottom: .5rem;
 }
 
-
+.timezone--fragment{
+    background-color: #05a1ff;
+    color: #fff;
+    font-weight: 700;
+    height: 5rem;
+    padding: 1rem 0;
+}
 .time_slot{
     height: 2rem;
     padding: .5rem;
     background-color: #e1e6ec;
     text-align: center;
     border-radius:.25rem;
-    margin: .5rem 0;
+    margin: .2rem 0;
     font-size:.8rem;
     font-weight: 700;
     color:#4c4c4c;

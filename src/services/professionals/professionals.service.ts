@@ -9,7 +9,7 @@ import { Professional } from '../../models/professional';
 })
 export class ProfessionalsService {
 
-  url = 'https://032d33d7-0241-4896-a1f5-5bee1d0e441b.mock.pstmn.io/professional';
+  url = 'https://bba1dc38-d131-402a-b617-8584cd4e4f30.mock.pstmn.io/professional';
 
 
   constructor(private httpClient: HttpClient) { }

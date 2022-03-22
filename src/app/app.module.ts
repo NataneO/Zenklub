@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { DayCalendarComponent } from './components/day-calendar/day-calendar.component';
 import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { NgxStarRatingModule } from 'ngx-star-rating';
@@ -24,7 +23,6 @@ registerLocaleData(localePt, 'pt');
     AppComponent,
     HomeComponent,
     ProfileComponent,
-    DayCalendarComponent,
     TimeSchedulesComponent,
   ],
   imports: [
